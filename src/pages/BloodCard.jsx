@@ -4,6 +4,7 @@ import axios from 'axios';
 import Navbar from '../componets/Navbar';
 import Contact from '../componets/Contact';
 import Footer from '../componets/Footer';
+import { useNavigate } from 'react-router-dom';
 
 const BloodCard = () => {
   const [error, setError] = useState('');
@@ -15,14 +16,16 @@ const BloodCard = () => {
   const [selectedBloodGroup, setSelectedBloodGroup] = useState('');
   const [addresses, setAddresses] = useState([]);
   const [bloodGroups, setBloodGroups] = useState(['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-']);
-
+  const navigator=useNavigate()
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token && token !== 'undefined') {
       setToken(token);
       console.log(token);
+    }else{
+      navigator('/login')
     }
-  }, []);
+  }, [navigator]);
 
   // Fetch the list of donors and user details with blood cards
   const all_donors = async () => {
@@ -31,6 +34,7 @@ const BloodCard = () => {
       console.log("Token being sent in request:", token);
 
       if (!token || token === 'undefined') {
+        
         setError('No token found. Please login again.');
         return;
       }
