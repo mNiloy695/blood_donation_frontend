@@ -15,6 +15,7 @@ const Blood_Card = (props) => {
           <h3><span className="font-semibold">Phone: </span> {props.phone}</h3>
           <h3><span className="font-semibold">Unit:</span> {props.unit}</h3>
           <h3><span className="font-semibold">Address: </span> {props.address}</h3>
+          <h3><span className="font-semibold">Address: </span> {props.email}</h3>
           <div className="mt-4 flex justify-between">
             <Link to={`/blood/${props.id}`}>
               <button className="bg-red-600 font-semibold py-2 px-8 rounded-md">
