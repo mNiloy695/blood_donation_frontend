@@ -63,7 +63,8 @@ const Profile = () => {
                     'Authorization': `Token ${token}`,
                 },
             });
-            localStorage.setItem('token',profile.blood_group)
+            localStorage.removeItem('blood_group')
+            localStorage.setItem('blood_group',profile.blood_group)
             console.log('Profile updated successfully:', response.data);
             setError('')
             setIsEditing(false);  // Exit edit mode after saving
