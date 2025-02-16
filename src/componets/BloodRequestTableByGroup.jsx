@@ -11,10 +11,16 @@ const BloodRequestsTable = () => {
   useEffect(() => {
     const blood = localStorage.getItem('blood_group');
     const user=localStorage.getItem('user_id');
+    const token=localStorage.getItem('token')
     const fetchRequests = async () => {
       try {
         const response = await axios.get(
-          `http://127.0.0.1:8000/recive/request/?blood=${blood}`
+          `http://127.0.0.1:8000/recive/request/?blood=${blood}`,
+          {
+            headers:{
+              "Authorization":`Token ${token}`,
+            }
+          }
         );
 
         //  fetch my all request for blood
