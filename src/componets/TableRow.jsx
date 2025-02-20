@@ -31,9 +31,9 @@ const TableRow = (props) => {
 
         try {
             const url = props.track === "recive" 
-                ? `http://127.0.0.1:8000/recive/request/${props.id}/`
+                ? `https://blood-donation-backend-v3bp.vercel.app/recive/request/${props.id}/`
                 : props.track === "donate" 
-                ? `http://127.0.0.1:8000/donate/request/${props.id}/` 
+                ? `https://blood-donation-backend-v3bp.vercel.app/donate/request/${props.id}/` 
                 : null;
 
             if (!url) {

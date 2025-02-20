@@ -10,7 +10,7 @@ const AllBloodRequest = () => {
 
   // Fetch recivers data from the API
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/recive/request/')
+    axios.get('https://blood-donation-backend-v3bp.vercel.app/recive/request/')
       .then(response => {
         setrecivers(response.data);
         setLoading(false);
@@ -24,7 +24,7 @@ const AllBloodRequest = () => {
 
   // Handle status change for each reciver
   const handleStatusChange = (id, newStatus) => {
-    axios.patch(`http://127.0.0.1:8000/recive/request/${id}/`,{ status: newStatus })
+    axios.patch(`https://blood-donation-backend-v3bp.vercel.app/recive/request/${id}/`,{ status: newStatus })
       .then(response => {
         // Update the status locally in the recivers array
         setrecivers(recivers.map(reciver =>

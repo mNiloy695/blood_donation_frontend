@@ -23,7 +23,7 @@ const RequestBloodForm = () => {
     // Fetch the blood request data based on the URL param (ID)
     const fetchBloodRequest = async () => {
         try {
-            const response = await axios.get(`http://127.0.0.1:8000/donate/request/${id}/`);
+            const response = await axios.get(`https://blood-donation-backend-v3bp.vercel.app/donate/request/${id}/`);
             setBloodRequest(response.data);
             if (response.data.error) {
                 console.error(response.data.error);
@@ -58,7 +58,7 @@ const RequestBloodForm = () => {
         e.preventDefault();
         try {
             await axios.post(
-                "http://127.0.0.1:8000/blood/specificRequest/",
+                "https://blood-donation-backend-v3bp.vercel.app/blood/specificRequest/",
                 {
                     requester: localStorage.getItem('user_id'),
                     blood_request: id,

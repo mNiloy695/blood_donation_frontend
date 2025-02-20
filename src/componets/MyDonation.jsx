@@ -16,7 +16,7 @@ import TableRow from './TableRow';
        
 
         //  fetch my all request for blood
-        const myRequestForBlood=await axios.get(`http://127.0.0.1:8000/donate/request/?user_id=${user}`)
+        const myRequestForBlood=await axios.get(`https://blood-donation-backend-v3bp.vercel.app/donate/request/?user_id=${user}`)
         
         setMyRequest(myRequestForBlood.data)
       } catch (err) {

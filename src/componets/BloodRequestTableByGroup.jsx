@@ -15,7 +15,7 @@ const BloodRequestsTable = () => {
     const fetchRequests = async () => {
       try {
         const response = await axios.get(
-          `http://127.0.0.1:8000/recive/request/?blood=${blood}`,
+          `https://blood-donation-backend-v3bp.vercel.app/recive/request/?blood=${blood}`,
           {
             headers:{
               "Authorization":`Token ${token}`,

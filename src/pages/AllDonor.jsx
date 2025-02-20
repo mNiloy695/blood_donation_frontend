@@ -10,7 +10,7 @@ const Donors = () => {
 
   // Fetch donors data from the API
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/donate/request/')
+    axios.get('https://blood-donation-backend-v3bp.vercel.app/donate/request/')
       .then(response => {
         setDonors(response.data);
         setLoading(false);
@@ -24,7 +24,7 @@ const Donors = () => {
 
   // Handle status change for each donor
   const handleStatusChange = (id, newStatus) => {
-    axios.patch(`http://127.0.0.1:8000/donate/request/${id}/`, { status: newStatus })
+    axios.patch(`https://blood-donation-backend-v3bp.vercel.app/donate/request/${id}/`, { status: newStatus })
       .then(response => {
         // Update the status locally in the donors array
         setDonors(donors.map(donor =>

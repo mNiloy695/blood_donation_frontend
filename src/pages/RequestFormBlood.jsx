@@ -50,7 +50,7 @@ const RequestFormBlood = () => {
     }
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/recive/request/', 
+      const response = await axios.post('https://blood-donation-backend-v3bp.vercel.app/recive/request/', 
         { user, blood, address, phone, unit },
         {
           headers: {

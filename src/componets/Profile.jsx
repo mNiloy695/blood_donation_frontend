@@ -20,7 +20,7 @@ const Profile = () => {
             const user_id = localStorage.getItem('user_id');
             
             try {
-                const response = await axios.get(`http://127.0.0.1:8000/account/register/${user_id}/`, {
+                const response = await axios.get(`https://blood-donation-backend-v3bp.vercel.app/account/register/${user_id}/`, {
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': `Token ${token}`,
@@ -57,7 +57,7 @@ const Profile = () => {
       
 
         try {
-            const response = await axios.patch(`http://127.0.0.1:8000/account/register/${user_id}/`,profile, {
+            const response = await axios.patch(`https://blood-donation-backend-v3bp.vercel.app/account/register/${user_id}/`,profile, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Token ${token}`,

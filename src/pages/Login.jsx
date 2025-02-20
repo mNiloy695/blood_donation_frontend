@@ -35,7 +35,7 @@ const LoginForm = () => {
     try {
       // Make a POST request to the backend
      
-        const response = await axios.post('http://127.0.0.1:8000/account/login/', { username, password } ,
+        const response = await axios.post('https://blood-donation-backend-v3bp.vercel.app/account/login/', { username, password } ,
         {
           headers: {
             'Content-Type':'application/json',
@@ -52,7 +52,7 @@ const LoginForm = () => {
         // Save the token in localStorage immediately after receiving it
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('user_id',response.data.user_id)
-        localStorage.setItem('is_staff',response.data.is_staff) 
+        localStorage.setItem('is_staff',response.data.is_staff)
         console.log(response.data)
         localStorage.setItem('blood_group',response.data.blood_group) 
         // Navigate to the home page (or any other route)

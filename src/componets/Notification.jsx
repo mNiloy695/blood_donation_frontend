@@ -14,7 +14,7 @@ const BloodRequestPopup = ({ userId }) => {
     const id = localStorage.getItem('user_id');
     const token = localStorage.getItem('token');
 
-    axios.get(`http://127.0.0.1:8000/blood/specificRequest/?user_id=${id}`, {
+    axios.get(`https://blood-donation-backend-v3bp.vercel.app/blood/specificRequest/?user_id=${id}`, {
       headers: {
         'Authorization': `Token ${token}`,
       }

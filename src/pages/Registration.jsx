@@ -63,7 +63,7 @@ const Registration = () => {
     console.log('Form submitted', formData);
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/account/register/', formData, {
+      const response = await axios.post('https://blood-donation-backend-v3bp.vercel.app/account/register/', formData, {
         headers: {
           'Content-Type': 'application/json', // This tells the server we are sending JSON
           'X-CSRFToken': csrfToken,

@@ -14,7 +14,7 @@ const Navbar = () => {
       const token = localStorage.getItem('token'); // Retrieve token from localStorage
       const csrfToken = document.cookie.match(/csrftoken=([^;]+)/)?.[1]; 
       if (token) {
-        const response = await axios.post('http://127.0.0.1:8000/account/logout/', {}, {
+        const response = await axios.post('https://blood-donation-backend-v3bp.vercel.app/account/logout/', {}, {
           headers: {
             'Authorization': `Token ${token}`,
             'X-CSRFToken': csrfToken, // Pass token in Authorization header

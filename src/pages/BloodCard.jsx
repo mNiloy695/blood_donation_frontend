@@ -39,7 +39,7 @@ const BloodCard = () => {
         return;
       }
 
-      const response = await axios.get('http://127.0.0.1:8000/donate/request/', {
+      const response = await axios.get('https://blood-donation-backend-v3bp.vercel.app/donate/request/', {
         headers: {
           'Authorization': `Token ${token}`,
         },
@@ -53,7 +53,7 @@ const BloodCard = () => {
 
         // Fetch user details for each donor
         for (let donor of response.data) {
-          const donorUserResponse = await axios.get(`http://127.0.0.1:8000/account/register/${donor.user}/`);
+          const donorUserResponse = await axios.get(`https://blood-donation-backend-v3bp.vercel.app/account/register/${donor.user}/`);
           const userDetails = donorUserResponse.data;
 
           donorWithUserDetails.push({
